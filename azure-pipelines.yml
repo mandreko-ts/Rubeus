@@ -10,7 +10,7 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-  - stage: Build net3.5
+  - stage: net3.5
     dependsOn: []
     jobs:
     - job: Build
@@ -33,7 +33,7 @@ stages:
           ArtifactName: 'Rubeus-net3.5'
           publishLocation: 'Container'
 
-  - stage: Build net4.0
+  - stage: net4.0
     dependsOn: []
     jobs:
     - job: Build
