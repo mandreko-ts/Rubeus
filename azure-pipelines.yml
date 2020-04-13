@@ -11,10 +11,11 @@ variables:
 
 stages:
   - stage: net35
+    displayName: "Build .NET 3.5"
     dependsOn: []
     jobs:
     - job: Build
-
+      displayName: "Build .NET 3.5"
       steps:
       - task: VSBuild@1
         inputs:
@@ -34,9 +35,11 @@ stages:
           publishLocation: 'Container'
 
   - stage: net40
+    displayName: "Build .NET 4.0"
     dependsOn: []
     jobs:
     - job: Build
+      displayName: "Build .NET 4.0"
       steps:
       - task: VSBuild@1
         inputs:
