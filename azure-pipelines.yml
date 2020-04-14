@@ -27,7 +27,9 @@ stages:
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)'
           Contents: 'Rubeus/bin/Release/Rubeus.exe'
-          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)/v3.5/'
+          flattenFolders: true
+          
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
@@ -50,7 +52,8 @@ stages:
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)'
           Contents: 'Rubeus/bin/Release/Rubeus.exe'
-          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)/v4.0/'
+          flattenFolders: true
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
