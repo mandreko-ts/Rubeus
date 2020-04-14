@@ -17,6 +17,9 @@ stages:
     - job: Build
       displayName: "Build .NET 3.5"
       steps:
+
+
+
       - task: VSBuild@1
         inputs:
           solution: '$(solution)'
@@ -48,6 +51,7 @@ stages:
           solution: '$(solution)'
           platform: '$(buildPlatform)'
           configuration: '$(buildConfiguration)'
+          msbuildArgs: '/p:TargetFrameworkVersion=v4.6.1'
       - task: CopyFiles@2
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)'
