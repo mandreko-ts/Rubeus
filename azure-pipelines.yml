@@ -18,17 +18,17 @@ stages:
       displayName: "Build .NET 3.5"
       steps:
 
-      - task: DownloadBuildArtifacts@0
+      - task: DownloadPipelineArtifact@2
         inputs:
-          buildType: 'current'
-          downloadType: 'single'
-          artifactName: 'RoslynObfuscator'
-          downloadPath: '$(System.SourcesDirectory)'
-          pipeline: 2
+          buildType: 'specific'
+          project: 'e85054ec-30a9-40de-84e4-6bc054914bbe'
+          definition: '2'
+          buildVersionToDownload: 'latest'
+          targetPath: '$(Pipeline.Workspace)'
 
       - task: PowerShell@2
         inputs:
-          filePath: '$(System.SourcesDirectory)/RoslynObfuscator.ps1'
+          filePath: '$(Pipeline.Workspace)/RoslynObfuscator/RoslynObfuscator.ps1'
           arguments: '-SlnFile Rubeus/Rubeus.sln'
           failOnStderr: true
 
@@ -59,17 +59,17 @@ stages:
     - job: Build
       displayName: "Build .NET 4.0"
       steps:
-      - task: DownloadBuildArtifacts@0
+      - task: DownloadPipelineArtifact@2
         inputs:
-          buildType: 'current'
-          downloadType: 'single'
-          artifactName: 'RoslynObfuscator'
-          downloadPath: '$(System.SourcesDirectory)'
-          pipeline: 2
+          buildType: 'specific'
+          project: 'e85054ec-30a9-40de-84e4-6bc054914bbe'
+          definition: '2'
+          buildVersionToDownload: 'latest'
+          targetPath: '$(Pipeline.Workspace)'
 
       - task: PowerShell@2
         inputs:
-          filePath: '$(System.SourcesDirectory)/RoslynObfuscator.ps1'
+          filePath: '$(Pipeline.Workspace)/RoslynObfuscator/RoslynObfuscator.ps1'
           arguments: '-SlnFile Rubeus/Rubeus.sln'
           failOnStderr: true
       - task: VSBuild@1
