@@ -29,7 +29,7 @@ stages:
       - task: PowerShell@2
         inputs:
           filePath: '$(Pipeline.Workspace)\RoslynObfuscator\RoslynObfuscator.ps1'
-          arguments: '-SlnFile $(Build.SourcesDirectory)\Rubeus\Rubeus.sln -ObfuscatorFile $(Pipeline.Workspace)\RoslynObfuscator\RoslynObfuscator.exe'
+          arguments: '-SlnFile $(Build.SourcesDirectory)\Rubeus.sln -ObfuscatorFile $(Pipeline.Workspace)\RoslynObfuscator\RoslynObfuscator.exe'
           failOnStderr: true
 
       - task: VSBuild@1
@@ -70,7 +70,7 @@ stages:
       - task: PowerShell@2
         inputs:
           filePath: '$(Pipeline.Workspace)\RoslynObfuscator\RoslynObfuscator.ps1'
-          arguments: '-SlnFile $(Build.SourcesDirectory)\Rubeus\Rubeus.sln -ObfuscatorFile $(Pipeline.Workspace)\RoslynObfuscator\RoslynObfuscator.exe'
+          arguments: '-SlnFile $(Build.SourcesDirectory)\Rubeus.sln -ObfuscatorFile $(Pipeline.Workspace)\RoslynObfuscator\RoslynObfuscator.exe'
           failOnStderr: true
       - task: VSBuild@1
         inputs:
