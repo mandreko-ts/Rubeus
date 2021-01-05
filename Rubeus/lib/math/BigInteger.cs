@@ -43,11 +43,7 @@ using Mono.Math.Generator;
 
 namespace Mono.Math {
 
-#if INSIDE_CORLIB
-	internal
-#else
 	public
-#endif
 	class BigInteger {
 
 		#region Data Storage
@@ -848,11 +844,7 @@ namespace Mono.Math {
 
 		#endregion
 
-#if INSIDE_CORLIB
-		internal
-#else
 		public
-#endif
 		sealed class ModulusRing {
 
 			BigInteger mod, constant;
