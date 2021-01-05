@@ -32,6 +32,7 @@
 
 using System;
 using Mono.Math.Prime;
+using Mono.Math.Prime.ConfidenceFactor;
 
 namespace Mono.Math.Prime.Generator {
 
