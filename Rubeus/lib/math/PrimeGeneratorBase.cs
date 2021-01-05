@@ -31,6 +31,7 @@
 //
 
 using System;
+using Mono.Math.Prime;
 
 namespace Mono.Math.Prime.Generator {
 
